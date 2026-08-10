@@ -3,16 +3,23 @@
 A luxury beachside resort & café website for Rio de Grande (Agonda, Goa). Fully static
 React (Vite) site — no backend, no database. Guests get in touch via WhatsApp, phone, or email.
 
+There's also an AI WhatsApp concierge bot (Claude-powered) that answers guest FAQs — see
+[WHATSAPP_BOT_SETUP.md](WHATSAPP_BOT_SETUP.md) for setup.
+
 ## Stack
 
 - **React** (Vite) — in `client/`
 - Static content only — rooms, gallery and café photos are hardcoded in the components
   that display them (`client/src/components/Rooms.jsx`, `Gallery.jsx`, `Cafe.jsx`)
+- **`client/api/whatsapp.js`** — a Vercel serverless function powering the WhatsApp bot
+  (Meta Cloud API + Claude API). Deploys alongside the site automatically.
 
 ## Project layout
 
 ```
 client/
+  api/
+    whatsapp.js  WhatsApp webhook handler (verification + AI replies)
   public/images/ Room, café and gallery photos
   src/
     components/  Navbar, Hero, Rooms, Cafe, Gallery, Contact, Footer, etc.
