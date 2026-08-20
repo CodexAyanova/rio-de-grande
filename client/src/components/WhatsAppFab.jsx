@@ -1,3 +1,5 @@
+import { trackEvent, EVENTS } from '../analytics';
+
 export default function WhatsAppFab() {
   return (
     <a
@@ -6,6 +8,7 @@ export default function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      onClick={() => trackEvent(EVENTS.WHATSAPP, { source: 'floating_button' })}
     >
       💬
     </a>

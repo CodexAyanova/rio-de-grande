@@ -9,7 +9,7 @@ const rooms = [
   {
     name: 'Luxury Rooms',
     description: 'Extra space, premium finishes and thoughtful touches for a truly indulgent stay.',
-    images: ['/images/lux1.jpeg', '/images/lux2.jpeg', '/images/lux3.jpeg', '/images/lux4.jpeg'],
+    images: ['/images/lux1.jpeg', '/images/lux2.jpeg', '/images/lux5.jpeg', '/images/lux4.jpeg'],
   },
   {
     name: 'Family Rooms',

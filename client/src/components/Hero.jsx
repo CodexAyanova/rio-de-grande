@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
 import { BOOKING_URL } from '../constants';
+import { trackEvent, EVENTS } from '../analytics';
 
-const slides = ['/images/gallery11.jpg', '/images/deluxeroom2.jpg', '/images/gallery33.jpg'];
+const slides = ['/images/poolnight.jpg', '/images/cafeexterior.jpg', '/images/gallery33.jpg'];
 
 export default function Hero() {
   const [active, setActive] = useState(0);
@@ -34,7 +35,13 @@ export default function Hero() {
         </p>
         <div className="hero-actions">
           <a className="btn btn-primary" href="#rooms">Explore Rooms</a>
-          <a className="btn btn-ghost" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+          <a
+            className="btn btn-ghost"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent(EVENTS.BOOKING, { source: 'hero' })}
+          >
             Book Now
           </a>
         </div>

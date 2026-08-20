@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BOOKING_URL } from '../constants';
+import { trackEvent, EVENTS } from '../analytics';
 
 const links = [
   { href: '#about', label: 'About' },
@@ -42,7 +43,10 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="nav-cta"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                trackEvent(EVENTS.BOOKING, { source: 'navbar' });
+              }}
             >
               Book Now
             </a>

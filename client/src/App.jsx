@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { initAnalytics } from './analytics';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,6 +15,10 @@ import Lightbox from './components/Lightbox';
 
 function App() {
   const [lightboxImage, setLightboxImage] = useState(null);
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
 
   const openLightbox = (src, alt) => setLightboxImage({ src, alt });
   const closeLightbox = () => setLightboxImage(null);

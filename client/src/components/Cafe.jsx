@@ -1,4 +1,5 @@
 import { useReveal } from '../hooks/useReveal';
+import { trackEvent, EVENTS } from '../analytics';
 
 const images = [
   '/images/cafe1.jpeg',
@@ -24,7 +25,13 @@ export default function Cafe({ onImageClick }) {
             serves honest, flavourful food made for guests who love the beach as much as they
             love a good meal.
           </p>
-          <a className="btn btn-outline" href="https://sorabeachpub.com" target="_blank" rel="noopener noreferrer">
+          <a
+            className="btn btn-outline"
+            href="https://sorabeachpub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent(EVENTS.CAFE)}
+          >
             Reserve a Table
           </a>
         </div>
