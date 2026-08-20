@@ -2,6 +2,7 @@ import { useReveal } from '../hooks/useReveal';
 
 const features = [
   { icon: '🌊', label: 'Steps from the beach' },
+  { icon: '🍳', label: 'Complimentary breakfast' },
   { icon: '☕', label: 'All-day café' },
   { icon: '🛏️', label: 'Elegant, airy rooms' },
   { icon: '🌴', label: 'Lush tropical garden' },

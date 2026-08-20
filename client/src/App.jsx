@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import StatsStrip from './components/StatsStrip';
 import About from './components/About';
 import Rooms from './components/Rooms';
+import Breakfast from './components/Breakfast';
 import Cafe from './components/Cafe';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -31,6 +32,7 @@ function App() {
       <StatsStrip />
       <About />
       <Rooms onImageClick={openLightbox} />
+      <Breakfast />
       <Cafe onImageClick={openLightbox} />
       <Gallery onImageClick={openLightbox} />
       <Contact />
